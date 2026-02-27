@@ -14,6 +14,10 @@ config/name="Jaywalker Godot"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jaywalker_godot/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="mobile"
