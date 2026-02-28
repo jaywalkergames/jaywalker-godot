@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b7uvs66cahi22"]
+
+[ext_resource type="PackedScene" uid="uid://igjmucx18ac0" path="res://scenes/menus/overlaid_menu.tscn" id="1_due5w"]
+[ext_resource type="Script" uid="uid://c6sbpvajgh7xr" path="res://scenes/menus/credits_menu.gd" id="2_536xp"]
+
+[node name="CreditsMenu" unique_id=184450130 instance=ExtResource("1_due5w")]
+script = ExtResource("2_536xp")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(237991903) index="0" unique_id=1694903407]
+text = "CREDITS"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(237991903) index="1" unique_id=1501238120]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+text = "Somebody made this game"

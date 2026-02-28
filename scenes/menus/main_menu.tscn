@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bg77qyvu8f450"]
+
+[ext_resource type="Script" uid="uid://cgw5uwipjybpu" path="res://scenes/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="PackedScene" uid="uid://ba8caagrbf0gq" path="res://scenes/audio/ui_sound_manager.tscn" id="2_2o76q"]
+[ext_resource type="PackedScene" uid="uid://b45de6ayicrka" path="res://scenes/menus/play_menu.tscn" id="2_8r73w"]
+[ext_resource type="PackedScene" uid="uid://cfxukvlbffcni" path="res://scenes/menus/options_menu.tscn" id="3_1hnlc"]
+[ext_resource type="PackedScene" uid="uid://3mm4cet65ulv" path="res://scenes/audio/background_music_player.tscn" id="3_6bivr"]
+[ext_resource type="PackedScene" uid="uid://b3sdamk0mvfo2" path="res://scenes/menus/stats_menu.tscn" id="4_50h1w"]
+[ext_resource type="PackedScene" uid="uid://b7uvs66cahi22" path="res://scenes/menus/credits_menu.tscn" id="5_euy4r"]
+[ext_resource type="PackedScene" uid="uid://cmwoyxr2vmilw" path="res://scenes/menus/exit_menu.tscn" id="6_1hnlc"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1524202023]
+script = ExtResource("1_xqga4")
+play_packed_scene = ExtResource("2_8r73w")
+options_packed_scene = ExtResource("3_1hnlc")
+stats_packed_scene = ExtResource("4_50h1w")
+credits_packed_scene = ExtResource("5_euy4r")
+exit_packed_scene = ExtResource("6_1hnlc")
+
+[node name="UiSoundManager" parent="." unique_id=370329384 instance=ExtResource("2_2o76q")]
+
+[node name="BackgroundMusicPlayer" parent="." unique_id=1032975352 instance=ExtResource("3_6bivr")]
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1030443364]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="." unique_id=1051840431]
+custom_minimum_size = Vector2(240, 80)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Title" type="TextureRect" parent="TitleMarginContainer" unique_id=888119825]
+layout_mode = 2
+
+[node name="ButtonsMarginContainer" type="MarginContainer" parent="." unique_id=1996670171]
+custom_minimum_size = Vector2(160, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -203.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsMarginContainer" unique_id=1302776844]
+layout_mode = 2
+alignment = 2
+
+[node name="PlayButton" type="Button" parent="ButtonsMarginContainer/VBoxContainer" unique_id=425397188]
+layout_mode = 2
+text = "PLAY"
+
+[node name="OptionsButton" type="Button" parent="ButtonsMarginContainer/VBoxContainer" unique_id=1241623620]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="StatsButton" type="Button" parent="ButtonsMarginContainer/VBoxContainer" unique_id=920741842]
+layout_mode = 2
+text = "STATS"
+
+[node name="CreditsButton" type="Button" parent="ButtonsMarginContainer/VBoxContainer" unique_id=1345502072]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="ExitButton" type="Button" parent="ButtonsMarginContainer/VBoxContainer" unique_id=660520818]
+layout_mode = 2
+text = "EXIT"
+
+[node name="VersionMarginContainer" type="MarginContainer" parent="." unique_id=552756235]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VersionLabel" type="Label" parent="VersionMarginContainer" unique_id=1000720359]
+layout_mode = 2
+text = "1.0.0"
+
+[connection signal="pressed" from="ButtonsMarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ButtonsMarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ButtonsMarginContainer/VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="ButtonsMarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ButtonsMarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cfxukvlbffcni"]
+
+[ext_resource type="PackedScene" uid="uid://igjmucx18ac0" path="res://scenes/menus/overlaid_menu.tscn" id="1_bp0ux"]
+[ext_resource type="Script" uid="uid://buimaj5dmjxbr" path="res://scenes/menus/options_menu.gd" id="2_60mby"]
+
+[node name="OptionsMenu" unique_id=184450130 instance=ExtResource("1_bp0ux")]
+script = ExtResource("2_60mby")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(237991903) index="0" unique_id=1694903407]
+text = "OPTIONS"

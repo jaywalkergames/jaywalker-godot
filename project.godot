@@ -15,12 +15,23 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Jaywalker Godot"
+run/main_scene="uid://bvscr4oyi6qyf"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*uid://c5od7djbgq0f4"
+StateManager="*uid://dpqtgu8cf16v"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/jaywalker_godot/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 
